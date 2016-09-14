@@ -6,6 +6,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
+    "prestart": "node ./node_modules/knex/bin/cli.js migrate:latest",
     "postinstall": "bower install",
     "start": "./node_modules/.bin/nodemon --ignore node_modules server/Server.js"
   },
