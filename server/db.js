@@ -1,6 +1,7 @@
 var pg = require('pg');
 const config = require('../knexfile.js');
 const env = 'development';
+const env = 'staging';
 
 
 const knex = require('knex')({
@@ -37,4 +38,8 @@ knex.migrate.latest([config]);
 //     { url: 'FHtvDA0W34I', channel_id: 3 },
 //   ]),
 //   knex('JoinTable').insert([]),
+<<<<<<< 24c6ff0edbf171379afed9797575f45347323476
 // ]);
+=======
+// ]);
+>>>>>>> for heroku
