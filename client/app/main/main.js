@@ -60,4 +60,3 @@ angular.module('PU.main', ['PU.factories'])
     $scope.classes = groups.data;
     $scope.loading = false;
   })
-});

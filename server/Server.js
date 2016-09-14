@@ -44,7 +44,6 @@ app.use(session({secret: "funnyGilby"}));
 app.use(express.static(path.join(__dirname, '../client'))); 
 app.use(express.static(path.join(__dirname, '../client/app')));
 app.use(express.static(path.join(__dirname, '../bower_components')));
-
 app.get("/auth/:service", AuthPort.app);
 
 app.get("/myGroups", function(req, res){
