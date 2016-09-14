@@ -13,6 +13,7 @@
     "browser-sync": "^1.5.7"
   },
   "dependencies": {
+    "angular": "^1.5.8",
     "authport": "^1.0.0",
     "authport-makerpass": "^1.0.0",
     "bcrypt-nodejs": "0.0.3",
@@ -26,6 +27,9 @@
     "path": "^0.12.7",
     "pg": "^6.1.0",
     "request": "^2.36.0",
-    "sqlite3": "^3.1.4"
+    "sqlite3": "^3.1.4",
+    "node-makerpass": "^1.1.0",
+    "path": "^0.12.7",
+    "request": "^2.36.0"
   }
 }
