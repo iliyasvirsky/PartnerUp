@@ -1,6 +1,6 @@
 var pg = require('pg');
 const config = require('../knexfile.js');
-const env = 'development';
+// const env = 'development';
 
 const knex = require('knex')({
   client: 'pg',
