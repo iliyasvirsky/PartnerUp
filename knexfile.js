@@ -1,3 +1,4 @@
+
 var url = 'postgres://hzhzhysgpursgg:Mkih7oW9Ek6dGdTSmyuVgxw3kr@ec2-54-163-245-32.compute-1.amazonaws.com:5432/dd9bnae9j8734d'
 
 module.exports = { 
@@ -12,3 +13,4 @@ module.exports = {
     //   tableName: 'migrations'
     // }
 }
+
