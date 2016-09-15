@@ -13,7 +13,6 @@ const knex = require('knex')({
   }
 });
 
-
 knex.migrate.latest([config]);
 
 // knex.initDB = () => Promise.all([
