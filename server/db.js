@@ -164,11 +164,9 @@ knex.getStudentData = (studentRay) => {
   return Promise.all(ray).then((groups) =>{
     var mergeGroup = [];
     for(let i=0; i<groups.length; i++){ 
-      groups[i][0].role_name = studentRay[i].role_name;
+      groups[i][0].role = studentRay[i].role_name;
       mergeGroup.push(groups[i][0]);
     }
-    console.log("merge,", mergeGroup)
-
     return mergeGroup
   }).catch((err) => console.log(err))
 }
