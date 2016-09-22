@@ -59,9 +59,8 @@ app.get("/myGroups", function(req, res){
   MP.user.groups(req.session.uid, req.session.accessToken)    
   .then(function(data){ 
     db.addGroups(data)
-      .then((groups) => {
-        res.send(groups);   
-      })
+      .then((groups) => res.send(groups))
+      .catch
   })    
 })
 
@@ -75,7 +74,7 @@ app.get('/:groupUid/generations', (req,res) => {
           res.send(generations);
       }).catch((err) => res.status(500).send(err))
     ).catch((err) => res.status(500).send(err))
-  ).catch((err) => res.status(401).redirect("/"))
+  ).catch((err) => res.status(401).send(err))
 })
 
 app.get("/:groupUid/members", function(req, res){    
@@ -89,7 +88,7 @@ app.get("/:groupUid/members", function(req, res){
         res.send(students);   
       }).catch((err) => res.status(500).send(err))
     }).catch((err) => res.status(500).send(err))
-  }).catch((err) => res.status(401).redirect("/"))
+  }).catch((err) => res.status(401).send(err))
 })    
 
 app.get('/:groupUid/pairs', (req,res) => {
@@ -100,14 +99,14 @@ app.get('/:groupUid/pairs', (req,res) => {
       db.getPairsForGroup(data.id, req.params.groupName)
       .then((pairs) => res.send(pairs))
     })
-  ).catch((err) => res.status(401).redirect("/"))
+  ).catch((err) => res.status(401).send(err))
 })
 
 app.post('/:groupUid/pairs', (req, res) => {
   db.authenticate(req.session.uid)
   .then(() => 
     res.status(201).send(db.addPairs(req.body, req.params.groupUid))
-  ).catch((err) => res.status(401).redirect("/"))
+  ).catch((err) => res.status(401).send(err))
 })
 
 app.get('/test', (req, res) => {
