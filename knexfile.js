@@ -1,7 +1,5 @@
 var path = require('path');
 
-    // client: 'postgresql',
-    // connection: url,
 module.exports = { 
     production : {
       client: 'pg',
@@ -19,5 +17,6 @@ module.exports = {
       connection: {
         filename: path.join(__dirname, './test/fakeDB.pg')
       }
+
     }
 }
