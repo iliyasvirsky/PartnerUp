@@ -17,6 +17,5 @@ module.exports = {
       connection: {
         filename: path.join(__dirname, './test/fakeDB.pg')
       }
-
     }
 }
