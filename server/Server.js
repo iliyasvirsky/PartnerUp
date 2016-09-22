@@ -83,8 +83,7 @@ app.get("/:groupUid/members", function(req, res){
     db.getGroup({mks_id: req.params.groupUid})
     .then((group) => {
       MP.memberships(group.mks_id, req.session.accessToken)    
-      .then(function(students){  
-        console.log("students", students)    
+      .then(function(students){   
         res.send(students);   
       }).catch((err) => res.status(500).send(err))
     }).catch((err) => res.status(500).send(err))

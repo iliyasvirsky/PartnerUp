@@ -144,7 +144,7 @@ knex.getGroup = (group) => {
     return knex('groups').where('id', group.id).returning('*')
       .then((groupData) => groupData[0])
       .catch((err) => {throw new Error("incorrect format, ", err)})
-  return knex('groups').where({mks_id: group.mksId}).returning('*')
+  return knex('groups').where({mks_id: group.mks_id}).returning('*')
     .then((groupData) => {
       return groupData[0]})
     .catch((err) => {throw new Error("incorrect format, ", err)})  
