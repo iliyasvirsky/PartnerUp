@@ -106,7 +106,7 @@ app.post('/:groupUid/pairs', (req, res) => {
   .then(() => {
     db.addPairs(req.body, req.params.groupUid).then(data => {
       res.status(201).send(data)
-    }).catch((err) => sres.status(500).send(err))
+    }).catch((err) => res.status(500).send(err))
   }).catch((err) => res.status(401).send(err))
 })
 
