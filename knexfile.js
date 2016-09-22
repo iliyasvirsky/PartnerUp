@@ -1,5 +1,7 @@
 var path = require('path');
 
+    // client: 'postgresql',
+    // connection: url,
 module.exports = { 
     production : {
       client: 'pg',
