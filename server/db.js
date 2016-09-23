@@ -54,9 +54,7 @@ knex.addGroups = (groups) => {
 */
 knex.addPairs = (pairData, groupUid) => {
   return knex.getGroup({mks_id: groupUid}) // returns genId
-  .then((group) => {
-    return group.id; // sets the gId for genarations and pairs tables in database
-  }) 
+  .then((group) => group.id ) // sets the gId for genarations and pairs tables in database
   .catch((err) => {throw new Error("Unable to to access groups, "+ err)})
   .then((gId) => {
     return addGeneration({groupId: gId, genTitle: pairData.genTitle, groupSize: pairData.groupSize}) //adds or finds genaration for group
